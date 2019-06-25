@@ -12,7 +12,7 @@ namespace SmartRecord
         public App()
         {
             InitializeComponent();
-
+            XF.Material.Forms.Material.Init(this);
             DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }

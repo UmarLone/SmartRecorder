@@ -6,6 +6,8 @@ using Xamarin.Forms.Xaml;
 
 using SmartRecord.Models;
 using SmartRecord.ViewModels;
+using XF.Material.Forms.UI.Dialogs;
+using System.Threading.Tasks;
 
 namespace SmartRecord.Views
 {
@@ -35,6 +37,19 @@ namespace SmartRecord.Views
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        private async System.Threading.Tasks.Task MaterialIconButton_ClickedAsync(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async Task MaterialButton_ClickedAsync(object sender, EventArgs e)
+        {
+            using (await MaterialDialog.Instance.LoadingDialogAsync(message: "Something is running"))
+            {
+                await Task.Delay(5000); // Represents a task that is running.
+            }
         }
     }
 }

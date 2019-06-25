@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartRecord.Views.AboutPage"
              xmlns:vm="clr-namespace:SmartRecord.ViewModels"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>
@@ -71,6 +72,14 @@
                         Command="{Binding OpenWebCommand}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
+                <material:MaterialCard CornerRadius="2" Elevation="1" HeightRequest="80" HorizontalOptions="FillAndExpand">
+                </material:MaterialCard>
+                <material:MaterialButton   x:Name="btnClick"   Text="Click" BackgroundColor="#EAEAEA"  HorizontalOptions="Center"    VerticalOptions="Center" />
+                <material:MaterialTextField x:Name="txti"  Placeholder="User Name" HelperText="Helper Text" ErrorText="Error Text" Text="Input Text" InputType="Default" />
+                <material:MaterialMenuButton ButtonType="Text" CornerRadius="24" Choices="{Binding Actions}" Command="{Binding MenuCommand}" />
+
+                <material:MaterialCheckboxGroup x:Name="checkBoxGroup" Choices="{Binding Jobs}" />
+
             </StackLayout>
         </ScrollView>
     </Grid>
